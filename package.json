@@ -1,0 +1,27 @@
+{
+  "name": "node-learning",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "multer": "^1.3.0"
+  },
+  "description": "This app is for learning node js",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "not yet"
+  },
+  "keywords": [
+    "learning",
+    "node",
+    "app"
+  ],
+  "author": "sudarshan",
+  "license": "MIT"
+}
