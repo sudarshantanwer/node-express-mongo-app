@@ -3,10 +3,12 @@
  */
 var express = require('express');
 var app = express();
+var routes = require('./routes.js');
+
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/my-first-database');
 
 app.use(express.static('public'));
-
-var routes = require('./routes.js');
 
 //both index.js and things.js should be in same directory
 app.use('/', routes);
