@@ -1,5 +1,12 @@
 # node-express-mongo-app
 
-To start app run "npm start" or "node server.js"
+# Steps to start :
+1. Run "sudo service mongod start"
+2. To start mongo server run "mongo --host 127.0.0.1:27017"
+3. To start app run "npm start" or "node server.js"
 
-To start mongo server use "mongo --host 127.0.0.1:27017"
+try to run :
+
+localhost:3000/login
+
+localhost:3000/home

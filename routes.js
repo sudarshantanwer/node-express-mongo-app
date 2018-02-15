@@ -28,15 +28,21 @@ router.get('/', function(req, res){
 });
 
 router.post('/', function(req, res){
-    res.send('POST route on things.');
+
 
 });
 
+router.get('/home', function(req, res){
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end(fs.readFileSync('./views/home/home.html'));
+});
+
 router.post('/save', function(req, res){
+    console.log(req);
     var newPerson = new Person({
-        name: 'sud',
-        age: 29,
-        nationality: 'Indian'
+        name: req.body.name,
+        age: req.body.age,
+        nationality: req.body.nationality
     });
 
     newPerson.save(function(err, Person){
@@ -57,7 +63,7 @@ router.post('/save', function(req, res){
 router.get('/login', function(req, res){
     res.writeHead(200, {'Content-Type': 'application/json'});
 
-    Person.find({nationality :'Indian'},function(err, response){
+    Person.find({nationality :'pak'},function(err, response){
 //        console.log(response);
         res.end(JSON.stringify(response));
 

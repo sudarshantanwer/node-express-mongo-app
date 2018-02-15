@@ -4,16 +4,18 @@
 var express = require('express');
 var app = express();
 var routes = require('./routes.js');
-
+var auth = require('./apis/auth.js');
+var bodyParser = require('body-parser')
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/my-first-database');
 
+// parse application/json
+app.use(bodyParser())
+
 app.use(express.static('public'));
+app.use('/', routes, auth);
 
-//both index.js and things.js should be in same directory
-app.use('/', routes);
-
-app.listen(3000);
+app.listen(8080);
 //
 // app.get('/index.html', function (req, res) {
 //     res.sendFile( __dirname + "/" + "index.html" );
